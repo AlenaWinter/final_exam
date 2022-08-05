@@ -3,4 +3,4 @@ class BasePage():
          self.browser = browser
          self.url = url
      def open(self): #метод open. Он должен открывать нужную страницу в браузере, используя метод get()
-         self.browser.get(self.URL)
+         self.browser.get(self.url)
