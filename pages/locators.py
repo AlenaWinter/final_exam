@@ -9,4 +9,8 @@ class LoginPageLocators(object):
     REGISTER_FORM = (By.CSS_SELECTOR, "#register_form")
 
 class ProductPageLocators(object):
-    BASKET_BTN = (By.CSS_SELECTOR, "#add_to_basket_form > button")
+     BASKET_BTN = (By.CSS_SELECTOR, "#add_to_basket_form > button")
+     PRODUCT_NAME = (By.CSS_SELECTOR, "#content_inner h1")
+     PRODUCT_PRICE = (By.CSS_SELECTOR, "#content_inner .price_color")
+
+     MSG_PRODUCT = (By.CSS_SELECTOR, "#messages .alertinner")
