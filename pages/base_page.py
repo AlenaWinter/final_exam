@@ -4,6 +4,7 @@ from selenium.common.exceptions import TimeoutException
 from selenium.webdriver.support.ui import WebDriverWait
 from selenium.webdriver.support import expected_conditions
 from .locators import BasePageLocators
+from .locators import MainPageLocators
 import math
 
 class BasePage(object):
@@ -14,6 +15,10 @@ class BasePage(object):
 
     def go_to_login_page(self):
         link = self.browser.find_element(*BasePageLocators.LOGIN_LINK)
+        link.click()
+        
+    def go_to_basket_page(self):
+        link = self.browser.find_element(*MainPageLocators.BASKET_BTN)
         link.click()
 
     def is_disappeared(self, how, what, timeout=4):

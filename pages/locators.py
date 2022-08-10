@@ -4,6 +4,10 @@
 class BasePageLocators(object):
     LOGIN_LINK = (By.CSS_SELECTOR, "#login_link")
     LOGIN_LINK_INVALID = (By.CSS_SELECTOR, "#login_link_inc")
+    
+class CartPageLocators(object):
+    BASKET_EMPTY_MSG = (By.CSS_SELECTOR, ".content #content_inner>p")
+    BASKET_PRODUCT_MSG = (By.CSS_SELECTOR, ".basket-title .col-sm-6")
 
 class LoginPageLocators(object):
     LOGIN_URL = (By.CSS_SELECTOR, "#id_login-redirect_url")
@@ -11,6 +15,7 @@ class LoginPageLocators(object):
     REGISTER_FORM = (By.CSS_SELECTOR, "#register_form")
 
 class MainPageLocators(object):
+    BASKET_BTN = (By.CSS_SELECTOR, ".header.container-fluid a.btn")
     LOGIN_LINK = (By.CSS_SELECTOR, "#login_link")
 
 class ProductPageLocators(object):
