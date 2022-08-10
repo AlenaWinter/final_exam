@@ -1,6 +1,7 @@
 
 from .pages.product_page import ProductPage
 from .pages.login_page import LoginPage
+from .pages.cart_page import CartPage
 import time
 import pytest
 
@@ -64,3 +65,13 @@ def test_guest_should_see_login_link_on_product_page(browser):
     page.open()
     page.should_be_login_link()
     # pytest -s test_product_page.py
+def test_guest_cant_see_product_in_cart_opened_from_product_page(browser):
+    product_link = "http://selenium1py.pythonanywhere.com/en-gb/catalogue/the-city-and-the-stars_95/"
+    page = ProductPage(browser, product_link)
+    page.open()
+    page.go_to_basket_page()
+    page = CartPage(browser, browser.current_url)
+    page.open()
+    page.should_not_be_products_in_the_basket()
+    page.should_not_be_products_in_the_basket_msg()
+    
